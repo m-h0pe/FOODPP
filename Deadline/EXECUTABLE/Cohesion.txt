@@ -1,0 +1,27 @@
+Certainly! Cohesion refers to how closely the elements within a module are related to each other. 
+In both the `Menu_2Module` and `Order_2Module`, we can identify high cohesion as each module encapsulates related functionalities. Let's break down the cohesion in each module:
+
+ `Menu_2Module` Cohesion:
+1. **Functional Cohesion:**
+   - `display_menu`: Displays the menu to the user.
+   - `add_to_cart`: Adds items to the shopping cart.
+   - `get_cart_total`: Calculates the total amount of items in the cart.
+
+2. Sequential Cohesion:
+   - The methods are logically sequenced: display the menu, allow the user to add items to the cart, and calculate the total amount.
+
+3. **Communicational Cohesion:**
+   - The methods within the module communicate with each other to achieve the goal of browsing the menu, adding items to the cart, and calculating the total.
+
+ `Order_2Module` Cohesion:
+1. **Functional Cohesion:**
+   - `place_order`: Displays the order summary, gets the total amount from the `Menu_2Module`, processes the payment, and prints the result.
+   - `process_payment`: Simulates the payment processing logic.
+
+2. **Sequential Cohesion:**
+   - The methods are logically sequenced: display the order summary, process the payment, and print the result.
+
+3. **Communicational Cohesion:**
+   - `place_order` communicates with the `Menu_2Module` to get the cart total and simulate payment processing.
+
+Overall, both modules exhibit high functional cohesion as the methods within each module are closely related and contribute to a specific goal. Additionally, the sequential and communicational cohesion within each module ensures that the methods work together to achieve their intended functionality.

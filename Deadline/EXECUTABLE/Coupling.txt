@@ -1,0 +1,29 @@
+Coupling refers to the degree of dependency between different modules in a system. 
+In an ideal design, you want to minimize coupling to create more modular and maintainable code. Let's evaluate the coupling between the `Menu_2Module` and `Order_2Module`:
+
+### Coupling between `Menu_2Module` and `Order_2Module`:
+
+1. **Parameter Coupling:**
+   - The `Order_2Module` depends on the `Menu_2Module` through its constructor. However, this dependency is necessary for the `Order_2Module` to access the `Menu_2Module` methods like `view_cart` and `get_cart_total`.
+
+2. **Data Coupling:**
+   - The modules share data indirectly through method calls. For example, the `Order_2Module` calls `menu_browser.view_cart()` and `menu_browser.get_cart_total()` to get information about the shopping cart.
+
+3. **Control Coupling:**
+   - There is no direct control coupling between the modules. The `Menu_2Module` doesn't control the flow of the `Order_2Module`, and vice versa.
+
+4. **Common Coupling:**
+   - There is no shared global data between the modules. The communication happens through method calls, and each module manages its own state.
+
+5. **Content Coupling:**
+   - The modules do not expose their internal implementations to each other. They only interact through the public methods and don't rely on the internal details of the other module.
+
+### Overall Coupling Assessment:
+   - The coupling between the `Menu_2Module` and `Order_2Module` is primarily through method calls, and there is a level of dependency due to the `Order_2Module` relying on the `Menu_2Module` to get cart information. However, this dependency is necessary for the modules to work together to achieve the overall goal of placing an order with payment.
+
+### Recommendations for Minimizing Coupling:
+   - Continue to keep the modules focused on specific responsibilities.
+   - Consider using interfaces or abstract classes to define clear boundaries and reduce direct dependencies.
+   - If the application grows, consider using a more sophisticated architecture (e.g., MVC, MVVM) to further separate concerns.
+
+While there is some level of coupling, it is kept to a minimum and is justifiable given the interaction needed between these specific modules for the application's functionality.
